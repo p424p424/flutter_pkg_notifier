@@ -26,6 +26,18 @@ library;
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 
+class Notifier<T> extends ChangeNotifier {
+  Notifier(this._value);
+
+  T _value;
+
+  T get value => _value;
+  set value(T value) {
+    _value = value;
+    notifyListeners();
+  }
+}
+
 /// A notifier for synchronous operations that immediately produce a value.
 ///
 /// Use `SyncNotifier` when you have a synchronous operation that returns
