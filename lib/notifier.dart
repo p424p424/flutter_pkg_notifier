@@ -27,13 +27,14 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 
 class Notifier<T> extends ChangeNotifier {
-  Notifier(this._value);
+  Notifier(this._state);
 
-  T _value;
+  T _state;
 
-  T get value => _value;
-  set value(T value) {
-    _value = value;
+  T get state => _state;
+
+  set state(T newState) {
+    _state = newState;
     notifyListeners();
   }
 }
