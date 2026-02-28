@@ -26,8 +26,10 @@ library;
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 
-class Notifier<T> extends ChangeNotifier {
+abstract class Notifier<T> extends ChangeNotifier {
   Notifier(this._state);
+
+  Future<void> init();
 
   T _state;
 
